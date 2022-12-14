@@ -13,8 +13,6 @@ build:
   number: 0
 
 requirements:
-  build:
-    - gsl
   host:
     - python
     - pip
@@ -24,6 +22,7 @@ requirements:
     - setuptools
     - six
     - diffpy.structure >=3
+    - gsl
 
 test:
   imports:
