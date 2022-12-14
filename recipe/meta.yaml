@@ -1,5 +1,5 @@
 {% set name = "diffpy.pdffit2" %}
-{% set version = "1.4.1" %}
+{% set version = "1.4.0" %}
 
 package:
   name: {{ name }}
@@ -10,7 +10,7 @@ source:
   sha256: 093980832ebed9bd54f1b4d61d72ce43136a42653f98e76b99d9bcaf6677a682
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   host:
