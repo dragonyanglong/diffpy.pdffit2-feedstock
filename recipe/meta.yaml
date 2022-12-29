@@ -10,19 +10,25 @@ source:
   sha256: 093980832ebed9bd54f1b4d61d72ce43136a42653f98e76b99d9bcaf6677a682
 
 build:
+  # we need egg_dir to avoid overlapping diffpy/__init__.py files.
+  preserve_egg_dir: true
+  noarch: python
   number: 1
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
+  build:
+    - {{ compiler('cxx') }}     # [py3k or not win]
+    - gsl {{ gsl }}
   host:
-    - python
+    - python >=3.7
     - pip
     - setuptools
   run:
-    - python
+    - python >=3.7
     - setuptools
     - six
     - diffpy.structure >=3
-    - gsl
 
 test:
   imports:
@@ -38,9 +44,9 @@ about:
   home: https://github.com/diffpy/diffpy.pdffit2
   summary: PDFfit2 - real space structure refinement program.
   description: |
-    PDFgui is a software for pair distribution function simulation and
-    structure refinement, which provides a simple, fast, and easy-to-use user
-    interface for chemists, physicists, and materials scientists.
+    The diffpy.pdffit2 package provides functions for calculation and refinement of atomic pair distribution function 
+    from crystal structure model. It is used as a computational engine by PDFgui, which provides a simple, fast, and 
+    easy-to-use user interface for chemists, physicists, and materials scientists.
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE.txt
