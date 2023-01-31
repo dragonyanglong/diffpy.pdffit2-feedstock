@@ -13,17 +13,17 @@ build:
   # we need egg_dir to avoid overlapping diffpy/__init__.py files.
   preserve_egg_dir: true
   noarch: python
-  number: 1
+  number: 2
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   build:
     - {{ compiler('cxx') }}     # [py3k or not win]
-    - gsl {{ gsl }}
   host:
     - python >=3.7
     - pip
     - setuptools
+    - gsl {{ gsl }}
   run:
     - python >=3.7
     - setuptools
