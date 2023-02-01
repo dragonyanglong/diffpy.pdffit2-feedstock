@@ -35,6 +35,7 @@ test:
   imports:
     - diffpy
     - diffpy.pdffit2
+    - diffpy.pdffit2.pdffit2
     - diffpy.pdffit2.ipy_ext
     - diffpy.pdffit2.tests
   requires:
