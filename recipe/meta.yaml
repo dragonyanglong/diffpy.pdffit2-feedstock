@@ -12,7 +12,7 @@ source:
 build:
   # we need egg_dir to avoid overlapping diffpy/__init__.py files.
   preserve_egg_dir: true
-  number: 6
+  number: 7
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
@@ -23,13 +23,13 @@ requirements:
     - python
     - pip
     - setuptools
-    - gsl {{ gsl }}
+#    - gsl {{ gsl }}
   run:
     - python
     - setuptools
     - six
-    - diffpy.structure
-    - gsl {{ gsl }}
+    - diffpy.structure >=3
+#    - gsl {{ gsl }}
 
 test:
   imports:
