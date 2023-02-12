@@ -17,8 +17,8 @@ elif [[ "$(uname)" == Darwin ]]; then
     fi
 fi
 
-$PYTHON -m easy_install --no-deps .
-#$PYTHON -m pip install . --no-deps -vv
+#$PYTHON -m easy_install --no-deps .
+$PYTHON -m pip install . --no-deps -vv
 
 # Add more build steps here, if they are necessary.
 
